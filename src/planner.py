@@ -1,5 +1,5 @@
 from pathlib import Path
-from hasher import hash_file
+from src.hasher import hash_file
 
 
 def plan(files, state, algorithm):
