@@ -1,0 +1,12 @@
+{
+  "sources": ["./testdata/source"],
+  "backup_root": "./testdata/backup",
+  "log_dir": "./logs",
+  "organize": true,
+  "hash_algorithm": "sha256",
+  "versioning": true,
+  "retention": {
+    "max_versions_per_file": 10,
+    "keep_days": 30
+  }
+}
