@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]       # CI runs on pushes to master or dev
+  pull_request:
+    branches: [ "master" ]              # CI runs on PRs targeting master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest               # Ubuntu environment
+
+    steps:
+      # Step 1: get your code onto the runner
+      - name: Checkout repository
+        uses: actions/checkout@v4       # latest stable checkout action
+
+      # Step 2: setup Python version
+      - name: Set up Python
+        uses: actions/setup-python@v5   # latest stable Python action
+        with:
+          python-version: "3.12"
+
+      # Step 3: install dependencies
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: run tests
+      - name: Run tests
+        run: |
+          pytest
