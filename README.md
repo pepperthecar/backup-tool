@@ -29,8 +29,6 @@ This project focuses on **correctness, safety, and auditability**, not UI or aut
 - All deletions are logged
 
 ### Safety guarantees
-- No source files are ever deleted
-- No silent overwrites
 - All actions are logged
 
 ---
