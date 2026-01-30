@@ -1,11 +1,11 @@
 from pathlib import Path
-from config import load_config
-from logger import setup_logger
-from state import load_state, save_state
-from scanner import scan_sources
-from planner import plan
-from executor import execute
-from retention import apply_retention
+from src.config import load_config
+from src.logger import setup_logger
+from src.state import load_state, save_state
+from src.scanner import scan_sources
+from src.planner import plan
+from src.executor import execute
+from src.retention import apply_retention
 
 def main():
     config = load_config(Path("config.json"))
