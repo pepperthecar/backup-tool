@@ -1,4 +1,4 @@
-import shutil
+import shutil, os
 from pathlib import Path
 
 
@@ -26,7 +26,8 @@ def execute(actions, backup_root: Path, duplicates_dir: Path, logger):
             next_version = f"v{len(existing_versions)+1}.bak"
 
             archived = version_dir / next_version
-            shutil.move(dest, archived)
+            if os.path.exists(dest):
+                shutil.move(dest, archived)
 
             shutil.copy2(path, dest)
 
