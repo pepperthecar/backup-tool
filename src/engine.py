@@ -13,7 +13,7 @@ class BackupEngine:
         self.config = config
         self.logger = logger
 
-        self.state_dir = config["backup_root"]
+        self.state_dir = config["app_dir"]
         self.state = load_state(self.state_dir)
 
         self._lock = threading.Lock()

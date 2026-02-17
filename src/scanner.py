@@ -5,7 +5,9 @@ def scan_sources(sources: list[Path]):
     files = []
 
     for src in sources:
-        for path in src.rglob("*"):
+        src_path = Path(src)
+        
+        for path in src_path.rglob("*"):
             if path.is_file():
                 files.append(path)
     return files
