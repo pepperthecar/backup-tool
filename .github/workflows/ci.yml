@@ -1,10 +1,8 @@
 name: CI
 
 on:
-  # push:
-  #   branches: [ "master" ]       # CI runs on pushes to master or dev
-  pull_request:
-    branches: [ "master" ]              # CI runs on PRs targeting master
+  push:
+    branches: [ "master" ]       # CI runs on pushes to master or dev
 
 jobs:
   test:
